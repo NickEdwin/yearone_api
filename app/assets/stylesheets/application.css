@@ -16,17 +16,21 @@
 
  /* footer */
 
+ body {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+ }
+
+ main {
+   flex: 1;
+ }
+
  footer {
-    height:175px;
-    width: 100%;
-    background-image: none;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-position: 0% 0%;
-    position: fixed;
-    bottom: 0pt;
-    left: 0pt;
-  }
+   display: flex;
+   align-self: baseline;
+   flex-direction: row;
+ }
 
   .center {
     text-align: center;
