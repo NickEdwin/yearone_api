@@ -7,4 +7,8 @@
     <%= text_field_tag :find_movies, nil, placeholder: 'Search by movie title' %>
     <%= submit_tag 'Find Movies', class: 'submit' %>
   <% end %>
+  <hr>
 </section>
+<% @movies.each do |movie| %>
+  <p>Title: <%= link_to movie.original_title, "/movies/#{movie.id}" %> - Average Rating: <%= movie.vote_average %> </p>
+<% end %>
