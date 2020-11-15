@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+ /* footer */
+
+ footer {
+    height:175px;
+    width: 100%;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+  }
+
+  .center {
+    text-align: center;
+    margin: auto;
+  }
