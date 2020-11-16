@@ -9,6 +9,7 @@
   <% end %>
   <hr>
 </section>
+<h3>These are the top rated movies  of all time according to The Movie DB:</h3>
 <% @movies.each do |movie| %>
   <p>Title: <%= link_to movie.original_title, "/movies/#{movie.id}" %> - Average Rating: <%= movie.vote_average %> </p>
 <% end %>
