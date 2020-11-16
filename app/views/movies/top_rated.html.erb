@@ -3,12 +3,13 @@
   <br>
   <p>OR</p>
   <br>
-  <%= form_tag("/movies/search") do %>
-    <%= text_field_tag :find_movies, nil, placeholder: 'Search by movie title' %>
+  <%= form_tag(movies_search_path) do %>
+    <%= text_field_tag :find_movies, nil, placeholder: 'Search by movie title', :required => true %>
     <%= submit_tag 'Find Movies', class: 'submit' %>
   <% end %>
   <hr>
 </section>
+<h3>These are the top rated movies  of all time according to The Movie DB:</h3>
 <% @movies.each do |movie| %>
   <p>Title: <%= link_to movie.original_title, "/movies/#{movie.id}" %> - Average Rating: <%= movie.vote_average %> </p>
 <% end %>
