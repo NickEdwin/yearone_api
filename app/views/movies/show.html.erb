@@ -4,7 +4,19 @@
 <% else %>
   <p>Directed by: Unknown</p>
 <% end %>
-<p>Released: <%= @movie.release_date %> | Average Rating: <%= @movie.vote_average %> | Runtime: <%= @movie.runtime %> mins | Genre(s): <%= @movie.genre_names %> </p>
+<p>Released: <%= @movie.release_date %> | Average MovieDB Rating: <%= @movie.vote_average %> | Runtime: <%= @movie.runtime %> mins | Genre(s): <%= @movie.genre_names %> </p>
+<hr>
+<% if @votes.nil? %>
+  <h3>Have you seen this movie? If so click the emoji to vote!</h3>
+  <%= button_to "👍", "/movies/#{@movie.id}/increase", params: {movie_title: @movie.original_title}, :title => "thumbs up", method: :put %> OR <%= button_to "👎", "/movies/#{@movie.id}/decrease", params: {movie_title: @movie.original_title}, :title => "thumbs down", method: :put %>
+<% else %>
+  <h3>Have you seen this movie? If so click the emoji to vote!</h3>
+  <p>Our users have given this movie:</p>
+  <%= button_to "👍", "/movies/#{@movie.id}/increase", params: {movie_title: @movie.original_title}, :title => "thumbs up", method: :put %>
+  <%= @votes.thumbs_up %> thumbs up.
+  <%= button_to "👎", "/movies/#{@movie.id}/decrease", params: {movie_title: @movie.original_title}, :title => "thumbs down", method: :put %>
+  <%= @votes.thumbs_down %> thumbs down.
+<% end %>
 <hr>
 <h5>Summary</h5>
 <p> <%= @movie.summary %> </p>
@@ -18,16 +30,16 @@
   <iframe width="420" height="315"
   src="https://www.youtube.com/embed/<%= @trailer %> ">
   </iframe>
+  <hr>
 <% end %>
-<hr>
 <% if @reviews.any? %>
   <h5><%= @reviews.count %> Reviews</h5>
   <% @reviews.each do |review| %>
     <p>Author: <%= review.author %></p>
     <p>"<%= review.content %>"</p>
   <% end %>
+  <hr>
 <% end %>
-<hr>
 <h3>Recommended Similar Movies:</h3>
 <% @recommended.each do |recommendation| %>
   <%= link_to recommendation.original_title, "/movies/#{recommendation.id}" %><br>
