@@ -14,5 +14,20 @@ class MoviesController < ApplicationController
     @reviews = MovieFacade.reviews(params[:id])
     @trailer = MovieFacade.videos(params[:id])
     @recommended = MovieFacade.recommended(params[:id])
+    @votes = Vote.find_by(movie_title: @movie.original_title)
+  end
+
+  def increase
+    movie = Vote.where(movie_title: params[:movie_title]).first_or_create
+    movie.thumbs_up += 1
+    movie.save
+    redirect_back(fallback_location: root_path)
+  end
+
+  def decrease
+    movie = Vote.where(movie_title: params[:movie_title]).first_or_create
+    movie.thumbs_down += 1
+    movie.save
+    redirect_back(fallback_location: root_path)
   end
 end
