@@ -3,8 +3,8 @@
   <br>
   <p>OR</p>
   <br>
-  <%= form_tag("/movies/search") do %>
-    <%= text_field_tag :find_movies, nil, placeholder: 'Search by movie title' %>
+  <%= form_tag(movies_search_path) do %>
+    <%= text_field_tag :find_movies, nil, placeholder: 'Search by movie title', :required => true %>
     <%= submit_tag 'Find Movies', class: 'submit' %>
   <% end %>
   <hr>
