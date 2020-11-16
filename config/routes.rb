@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get '/movies/top_rated', to: 'movies#top_rated'
 
   post '/movies/search', to: 'movies#search'
-
+  
+  get '/movies/:id', to: 'movies#show'
 end
