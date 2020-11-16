@@ -3,10 +3,28 @@ class MovieService
     movies = []
     page_number = 1
 
-    until movies.length >=40
+    until movies.length >= 40
       top_rated = conn.get("/3/movie/top_rated?api_key=#{ENV['MOVIE_DATA_BASE_API_KEY']}&language=en-US&page=#{page_number}")
       movie_list = JSON.parse(top_rated.body, symbolize_names: true)
 
+      movie_list[:results].each do |movie|
+        movies << movie
+      end
+
+      page_number += 1
+    end
+    movies
+  end
+
+  def search(keywords)
+    movies = []
+    page_number = 1
+
+    until movies.length >= 40
+      search = conn.get("/3/search/movie?api_key=#{ENV['MOVIE_DATA_BASE_API_KEY']}&query=#{keywords}&page=#{page_number}")
+
+      movie_list = JSON.parse(search.body, symbolize_names: true)
+      
       movie_list[:results].each do |movie|
         movies << movie
       end
