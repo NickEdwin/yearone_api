@@ -1,22 +1,4 @@
 class Movie
-  def self.top_rated
-    movie_service = MovieService.new
-    movie_info = movie_service.top_rated
-
-    @movies = movie_info.map do |movie|
-      Movie.new(movie)
-    end
-  end
-
-  def self.search(keywords)
-    movie_service = MovieService.new
-    movie_info = movie_service.search(keywords)
-
-    @movies = movie_info.map do |movie|
-      Movie.new(movie)
-    end
-  end
-
   attr_reader :original_title,
               :vote_average,
               :id,
@@ -32,5 +14,13 @@ class Movie
     @summary = movie_info[:overview]
     @runtime = movie_info[:runtime]
     @release_date = movie_info[:release_date]
+  end
+
+  def genre_names
+    results = ''
+    @genres.map do |genre|
+      results << genre[:name] + ', '
+    end
+    results.chomp(', ')
   end
 end
