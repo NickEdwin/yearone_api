@@ -1,3 +1,5 @@
+<%= button_to "Return Home", "/", method: :get %>
+
 <h1><%= @movie.original_title %></h1>
 <% if @crew.find {|member| member.job == "Director"} %>
   <p>Directed by: <%= @crew.find {|member| member.job == "Director"}.name %></p>
