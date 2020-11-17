@@ -12,13 +12,13 @@ I used SimpleCov to test my RSpec coverage (currently 100% coverage.) Travis CI 
 
 ## Demo Images   
 Landing Page  
-<img src="./app/assets/images/homepage.png" width=75% height=75%>  
+<img src="./app/assets/images/homepage.png" width=75% height=75%><br>    
 Top Rated Button   
-<img src="./app/assets/images/top_rated.gif" width=75% height=75%>  
+<img src="./app/assets/images/top_rated.gif" width=75% height=75%><br>     
 Movie Search  
-<img src="./app/assets/images/Search_demo.gif" width=75% height=75%>    
+<img src="./app/assets/images/Search_demo.gif" width=75% height=75%><br>       
 Movie Show Page  
-<img src="./app/assets/images/Display_page.gif" width=75% height=75%>    
+<img src="./app/assets/images/Display_page.gif" width=75% height=75%><br>       
 
 
 ## Local Setup
