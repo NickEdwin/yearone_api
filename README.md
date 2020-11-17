@@ -11,13 +11,13 @@ For this application I decided to give users not only the option to search for a
 I used SimpleCov to test my RSpec coverage (currently 100% coverage.) Travis CI was used for continuous integration and the application is live and usable on Heroku.  
 
 ## Demo Images   
-Landing Page  
+###Landing Page  
 <img src="./app/assets/images/homepage.png" width=75% height=75%><br>    
-Top Rated Button   
+###Top Rated Button   
 <img src="./app/assets/images/top_rated.gif" width=75% height=75%><br>     
-Movie Search  
+###Movie Search  
 <img src="./app/assets/images/Search_demo.gif" width=75% height=75%><br>       
-Movie Show Page  
+###Movie Show Page  
 <img src="./app/assets/images/Display_page.gif" width=75% height=75%><br>       
 
 
