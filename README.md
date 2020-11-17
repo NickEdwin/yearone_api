@@ -1,6 +1,7 @@
 ## YearOne API submission 
 
 [Production Demo Here](https://yearone-api.herokuapp.com)  
+* Note link is slow at first as Heroku's free dynos go into sleep mode when not in use.  
 
 [View my other repos on GitHub](https://github.com/NickEdwin)  
 [View my LinkedIn](https://www.linkedin.com/in/nicholas-edwin/)  
