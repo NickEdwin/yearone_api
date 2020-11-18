@@ -1,4 +1,4 @@
-## YearOne API submission 
+## YearOne API submission
 
 [Production Demo Here](https://yearone-api.herokuapp.com)  
 * Note link is slow at first as Heroku's free dynos go into sleep mode when not in use.  
@@ -9,7 +9,7 @@
 # About this app
 
 For this application I decided to give users not only the option to search for a movie, but also view top rated movies from The MovieDB. On a movies display page users can see a plethora of details for a movie including its: title, release date, rating, runtime, genre(s), cast, director, reviews, official trailer, and also reccomended similar movies. Visitors to the site also have the ability to vote on a movie by giving it a "👍" or "👎".  
-I used SimpleCov to test my RSpec coverage (currently 100% coverage.) Travis CI was used for continuous integration and the application is live and usable on Heroku.  
+I used SimpleCov to test my RSpec coverage (currently 100% coverage.) Travis CI was used for continuous integration and the application is live and usable on Heroku. Rubocop was used to ensure proper formatting/convention (less than 10 offenses currently)
 
 ## Demo Images   
 ### Landing Page  
@@ -35,7 +35,7 @@ I used SimpleCov to test my RSpec coverage (currently 100% coverage.) Travis CI 
 Simple database storage which stores the movies name, its thumbs up, and thumbs down. This uses the activerecord method `.first_or_create` to allow the db to create an entry the first time a user votes on a movie. This allows the db to only store information on those which have votes and not get overloaded with API call results.  
 ![Visual DB Table](https://i.imgur.com/A9UkY2K.png)
 
-## Languages / Frameworks / Tools 
+## Languages / Frameworks / Tools
 
   - Ruby 2.5.3  
   - Rails 5.2  

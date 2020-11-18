@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2020_11_16_202922) do
     t.string "movie_title"
     t.integer "thumbs_up", default: 0
     t.integer "thumbs_down", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
