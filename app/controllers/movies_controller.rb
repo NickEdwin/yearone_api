@@ -4,7 +4,13 @@ class MoviesController < ApplicationController
   end
 
   def search
-    @movies = MovieFacade.search(params[:find_movies])
+    movies = MovieFacade.search(params[:find_movies])
+    if movies.any?
+      @movies = movies
+    else
+      flash[:error] = "No movies found, please try again"
+      redirect_to '/'
+    end
   end
 
   def show
