@@ -36,3 +36,9 @@
     text-align: center;
     margin: auto;
   }
+
+  .error-flash {
+  padding: 10px;
+  background-color: red;
+  color: white;
+}
