@@ -19,7 +19,7 @@ class Movie
   def genre_names
     results = ''
     @genres.map do |genre|
-      results << genre[:name] + ', '
+      results << "#{genre[:name]}, "
     end
     results.chomp(', ')
   end

@@ -4,6 +4,7 @@ class CreateVotes < ActiveRecord::Migration[5.2]
       t.string :movie_title
       t.integer :thumbs_up, default: 0
       t.integer :thumbs_down, default: 0
+      t.timestamps
     end
   end
 end
