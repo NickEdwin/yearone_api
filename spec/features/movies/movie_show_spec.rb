@@ -26,6 +26,7 @@ RSpec.describe 'As any user' do
       expect(page).to have_content('Romance')
       expect(page).to have_content('Melanie Zanetti as Julia Mitchell')
       expect(page).to have_content('Have you seen this movie? If so click the emoji to vote!')
+      expect(page).to have_css('.poster')
       expect(page).to have_button('thumbs up')
       expect(page).to have_button('thumbs down')
     end
