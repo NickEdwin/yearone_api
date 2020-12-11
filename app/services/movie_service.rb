@@ -20,7 +20,7 @@ class MovieService
     until movies.length >= 40
       search = conn.get("search/movie?api_key=#{ENV['MOVIE_DATA_BASE_API_KEY']}&query=#{keywords}&page=#{page_number}")
       movie_list = JSON.parse(search.body, symbolize_names: true)
-      if movie_list[:total_results] == 0
+      if movie_list[:total_results] == nil
         break
       end
       movie_list[:results].each do |movie|
